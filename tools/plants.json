@@ -1,0 +1,252 @@
+{
+    "Nome": "Dracaena",
+    "Img": "https://s2.glbimg.com/Ipqa7Ij-SQoEiwoS5dBFka_EdzU=/620x455/e.glbimg.com/og/ed/f/original/2021/07/20/why_does_my_corn_plant_have_brown_tips_dracaena_fragrans_-_smart_garden_guide.jpg",
+    "Luminosidade": "Luz forte",
+    "id": "01",
+    "Crescimento": "Regular",
+    "Familia": "Liliaceae",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Cilma": "Tropical"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Peperomia",
+    "Img": "https://img.freepik.com/fotos-gratis/planta-cara-de-pimenta-em-um-pequeno-vaso_53876-94408.jpg?w=740&t=st=1684868549~exp=1684869149~hmac=7b2e1084732b7b36cabfe0eb218322be7860b3aa5026f129f2221a8e60439297.jpg",
+    "Familia": "Piperaceae",
+    "id": "02",
+    "Cilma": "Tropical",
+    "Crescimento": "Regular",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz fraca"
+}
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Bromelia",
+    "Img": "https://img.freepik.com/fotos-gratis/close-de-uma-linda-flor-de-bromelia-em-um-jardim-em-um-dia-frio_181624-12529.jpg?w=900&t=st=1684868824~exp=1684869424~hmac=5f8a16e6f9b73bea7e1b9a97ed355688185e10b60bdd9a78b8e16d9590926e7f.jpg",
+    "Familia": "Bromeliaceae",
+    "id": "03",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Aralia",
+    "Img": "http://www.tropicopia.com/house-plant/thumbnails/5711.jpg",
+    "Familia": "Araliaceae",
+    "id": "04",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz fraca"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Fern",
+    "Img": "https://img.freepik.com/fotos-premium/planta-de-casa-nephrolepis-em-vaso-branco_214995-1610.jpg?w=900.jpg",
+    "Familia": "Polypodiaceae",
+    "Luminosidade": "Luz fraca",
+    "id": "05",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Palmeira ondulada",
+    "Img": "https://img.freepik.com/fotos-gratis/folha-de-palmeira-ondulada-em-uma-panela-cinza_53876-146606.jpg?w=740&t=st=1684879239~exp=1684879839~hmac=0a99028e3e66d202602d8596d128da2bca8e8491c4ac3c09ed0ad543c03521de.jpg",
+    "Familia": "Arecaceae",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "id": "06",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Foliage plant",
+    "Img": "https://img.freepik.com/fotos-gratis/planta-calathea-em-um-objeto-de-decoracao-domestica-de-vaso-de-terracota_53876-133136.jpg?w=740&t=st=1684869078~exp=1684869678~hmac=e282adba60c5be674ec5837d5cd554c7f5d303b75f77691f3040223305b24697.jpg",
+    "Familia": "Marantaceae",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "id": "07",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Cactus & Succulent",
+    "Img": "https://img.freepik.com/fotos-gratis/cacto-de-barril-dourado-em-uma-panela-branca_53876-142817.jpg?size=626&ext=jpg&ga=GA1.1.361231208.1684868527&semt=ais.jpg",
+    "Familia": "Cactaceae",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Crescimento": "Regular",
+    "id": "08",
+    "Cilma": "Arid Tropical",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Hanging",
+    "Common name (fr.)": "Plante qui prie, Plante religieuse, Plante prieuse",
+    "Img": "https://as2.ftcdn.net/v2/jpg/04/29/61/13/1000_F_429611322_bNKUwfWQ5Gz6hEnsYoRhVqUqy2KSVuex.jpg",
+    "Familia": "Marantaceae",
+    "id": "09",
+    "Cilma": "Tropical",
+    "Crescimento": "Regular",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Philodendron",
+    "Img": "https://img.freepik.com/fotos-gratis/monstera-deliciosa-planta-em-um-vaso_53876-133116.jpg?w=740&t=st=1684869965~exp=1684870565~hmac=a89ebfe2f5c740a95b0cd799587a350c9f1cd54f349292e34da9878f9bab4375.jpg",
+    "Familia": "Araceas",
+    "Latin name": "Philodendron selloum",
+    "id": "10",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz fraca"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Flower",
+    "Img": "https://img.freepik.com/fotos-premium/as-flores-amarelas-da-trombeta-ou-da-allamanda-cathartica-fecham-se-no-jardim_150101-4083.jpg?w=740.jpg",
+    "Familia": "Apocynaceae",
+    "Latin name": "Allamanda nerifolia",
+    "id": "11",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Foliage plant",
+    "Common name (fr.)": "Calatha velour",
+    "Img": "https://img.freepik.com/fotos-gratis/calathea-planta-em-um-vaso_53876-126200.jpg?w=740&t=st=1684870166~exp=1684870766~hmac=12c81eb2d42f0a818b4acfbedd0f436ffbe536b743ea8dffdd1055bd65a58cb1.jpg",
+    "Familia": "Marantaceae",
+    "id": "12",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Lirio",
+    "Img": "https://img.freepik.com/fotos-gratis/planta-de-lirio-da-paz-em-um-objeto-de-decoracao-para-casa-em-vaso-de-terracota_53876-146302.jpg?w=740&t=st=1684869395~exp=1684869995~hmac=b3847960a67d7d6a4c107f2e16025a3179197b52be00f19546bcebe7e8c5810b.jpg",
+    "Familia": "Araceas",
+    "id": "13",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Alocasia",
+    "Img": "https://img.freepik.com/fotos-gratis/planta-em-vaso-alocasia-planta-de-casa-popular_53876-128862.jpg?w=740&t=st=1684869359~exp=1684869959~hmac=278955e927200378589d7526fd950832a6f117fda5e82216a4630c4385877929.jpg",
+    "Familia": "Araceas",
+    "id": "14",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Anturios",
+    "Img": "https://img.freepik.com/fotos-gratis/close-up-de-vermelho-heart-shaped-flor-de-anturios_23-2148058862.jpg?w=740&t=st=1684879111~exp=1684879711~hmac=89ababacfa09126d8fbbff12eb20a659bc536a4f960515ed086d3c23cdcd5287.jpg",
+    "Familia": "Araceas",
+    "id": "15",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luz forte"
+},
+////////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Espada de São Jorge",
+    "Img": "https://img.freepik.com/fotos-gratis/cobra-em-um-vaso-bege-perto-de-uma-parede_53876-133185.jpg?w=740&t=st=1684879436~exp=1684880036~hmac=e3690001f590b661a3f532a021d9b481ab5aa5da06da444659e06d565d1d583d.jpg",
+    "Familia": "Ruscaceae",
+    "Nome cientifico": "Dracaena trifasciata",
+    "id": "16",
+    "Crescimento": "Regular",
+    "Cilma": "Tropical",
+    "Irrigação": "Manter úmido",
+    "Luminosidade": "Meia sombra"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Planta borboleta",
+    "Img": "https://img.freepik.com/fotos-gratis/planta-borboleta-em-um-vaso-branco_53876-133127.jpg?w=826&t=st=1684886823~exp=1684887423~hmac=1728535606efbe01e53da8f4563743f94b25d5d28979393120083d4417c62934.jpg",
+    "Familia": "Oxalidaceae",
+    "Nome cientifico": "Oxalis Trangularis",
+    "id": "17",
+    "Crescimento": "Regular",
+    "Cilma": "Subropical",
+    "Irrigação": "Manter úmido",
+    "Luminosidade": "Meia sombra"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Hibisco",
+    "Img": "https://img.freepik.com/fotos-gratis/close-de-uma-flor-de-hibisco-vermelho-brilhante_181624-31934.jpg?w=900&t=st=1684887162~exp=1684887762~hmac=fa8305b2a83422ae5d14d3d4910572d703496c56937ea3188ec8c2d851efece1.jpg",
+    "Familia": "Malvaceae",
+    "Nome cientifico": "Hibiscus rosa-sinensis",
+    "id": "18",
+    "Crescimento": "Regular",
+    "Clima": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Luminosidade forte"
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Coleus",
+    "Img": "https://img.freepik.com/fotos-premium/coleus-marrom-escuro-com-borda-verde-i_752237-3402.jpg?w=740.jpg",
+    "Familia": "Lamiaceae",
+    "Nome cientifico": "Solenostemon sp",
+    "id": "19",
+    "Crescimento": "Regular",
+    "Clima": "Tropical",
+    "Irrigação": "Manter úmido",
+    "Luminosidade": "Meia sombra",
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Amor-perfeito",
+    "Img": "https://img.freepik.com/fotos-gratis/lindas-flores-violetas_144627-15704.jpg?w=740&t=st=1684888207~exp=1684888807~hmac=76390e7212f19ec5f12e51fe1ca1a1421f6e10b76f31db47fcad359d70c53194.jpg",
+    "Familia": "Violaceae",
+    "Nome cinetífico": "Viola",
+    "id": "20",
+    "Crescimento": "Regular",
+    "Clima": "Tropical",
+    "Irrigação": "Manter úmido",
+    "Luminosidade": "Luminosidade forte",
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Coleus",
+    "Img": "https://img.freepik.com/fotos-premium/coleus-marrom-escuro-com-borda-verde-i_752237-3402.jpg?w=740.jpg",
+    "Familia": "Lamiaceae",
+    "Nome cientifico": "Solenostemon scutellarioides",
+    "id": "21",
+    "Crescimento": "Rápido",
+    "Clima": "Tropical",
+    "Irrigação": "Mantenha úmido entre as regas e pode secar entre as regas",
+    "Luminosidade": "Meia sombra",
+},
+///////////////////////////////////////////////////////////////////////////////////
+{
+    "Nome": "Hortência",
+    "Img": "https://img.freepik.com/fotos-gratis/grande-e-linda-hortensia-rosa-em-uma-estufa-moderna_7502-7637.jpg?w=900&t=st=1684888744~exp=1684889344~hmac=4f2ef8c5d1c58992ff7dd7eab90b958d46da3798b9aa761c913dd902fe2665e2.jpg",
+    "Familia": "Hydrangeaceae",
+    "Nome Cientifico": "Hydrangea macrophylla",
+    "id": "22",
+    "Crescimento": "Regular",
+    "Clima": "Subropical",
+    "Irrigação": "Manter úmido",
+    "Luminosidade": "Meia sombra",
+},
