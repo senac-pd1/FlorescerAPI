@@ -12,6 +12,8 @@ using NetDevPack.Identity.Jwt;
 using NetDevPack.Identity.Model;
 using System.Reflection;
 using FlorescerAPI.Extensions;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -173,7 +175,7 @@ app.MapGet("/planta", async
     .WithTags("Planta");
 
 // Get de planta por ID
-app.MapGet("/planta/{id}", [Authorize] async
+app.MapGet("/plantaById/{id}", async
     (Guid id, MinimalContextDb context) =>
     await context.Plantas.FindAsync(id)
         is Planta planta ? Results.Ok(planta) : Results.NotFound())
@@ -181,6 +183,17 @@ app.MapGet("/planta/{id}", [Authorize] async
     .Produces(StatusCodes.Status404NotFound)
     .WithName("GetPlantaPorId")
     .WithTags("Planta");
+
+// Get de planta por NAME
+app.MapGet("/plantaByName/{name}", async
+    (string name, MinimalContextDb context) =>
+    await context.Plantas.Where(x => x.Name.Contains(name)).FirstOrDefaultAsync()
+        is Planta planta ? Results.Ok(planta) : Results.NotFound())
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithName("GetPlantaPorNome")
+    .WithTags("Planta");
+
 
 app.Run(); // Inicia a aplicação.
 
