@@ -49,6 +49,8 @@ git checkout -b nomeDaBranchDoJira
 
 4. A documentação de funcionamento da api está no swagger (ao executar a aplicação, o swagger abrirá automaticamente.)
 
+5. Ao testar os endpoints no swagger, enviar bearer {token} para receber autorização para 
+
 ----------------------------------------------
 Qualquer dúvda, só me Chamar :-)
 Wagner.
