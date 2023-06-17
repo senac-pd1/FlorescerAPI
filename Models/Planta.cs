@@ -13,6 +13,7 @@ namespace FlorescerAPI.Models
         public string Family { get; set; }
         public string Irrigation { get; set; }
         public string Climate { get; set; }
+        public string ScientificName { get; set; }
 
     }
 
