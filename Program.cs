@@ -94,7 +94,7 @@ app.MapPost("/registro", [AllowAnonymous] async (
     RegisterUser registerUser) =>
     {
         if (registerUser == null)
-            return Results.BadRequest("Usu�rio n�o informado");
+            return Results.BadRequest("Usuário não informado");
         if (!MiniValidator.TryValidate(registerUser, out var errors))
             return Results.ValidationProblem(errors);
 
@@ -195,6 +195,6 @@ app.MapGet("/plantaByName/{name}", [Authorize] async
     .WithTags("Planta");
 
 
-app.Run(); // Inicia a aplicacaoo.
+app.Run(); // Inicia a aplicacao.
 
 #endregion
