@@ -46,6 +46,10 @@ namespace FlorescerAPI.Data
                 .HasColumnType("varchar");
 
             modelBuilder.Entity<Planta>()
+                .Property(p => p.ScientificName)
+                .HasColumnType("varchar");
+
+            modelBuilder.Entity<Planta>()
                 .ToTable("Plantas");
 
 
