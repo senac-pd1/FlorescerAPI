@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen( c=>
         Title = "FlorescerAPI",
         Description = "Desenvolvido por Wagner Souza de Paula",
         Contact = new OpenApiContact { Name = "Wagner", Email = "wagnersouzadepaula@gmail.com"},
-        License = new OpenApiLicense { Name = "Uso Acadêmico", Url = new Uri("https://github.com/orgs/senac-pd1/repositories") }
+        License = new OpenApiLicense { Name = "Uso AcadÃªmico", Url = new Uri("https://github.com/orgs/senac-pd1/repositories") }
 
     });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -56,11 +56,11 @@ builder.Services.AddSwaggerGen( c=>
 }
     );
 
-// Passando o Contexto do DB para estabelecer a conexão.
+// Passando o Contexto do DB para estabelecer a conexï¿½o.
 builder.Services.AddDbContext<MinimalContextDb>(options => 
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Passando o Contexto do DB para estabelecer conexão usando token de autenticação.
+// Passando o Contexto do DB para estabelecer conexï¿½o usando token de autenticaï¿½ï¿½o.
 builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), 
     b => b.MigrationsAssembly("FlorescerAPI")));
@@ -86,7 +86,7 @@ app.UseAuthConfiguration();
 
 // Mapeando os endpoints
 // USUARIOS
-// Cadastro de usuário
+// Cadastro de usuï¿½rio
 app.MapPost("/registro", [AllowAnonymous] async (
     SignInManager<IdentityUser> signInManager,
     UserManager<IdentityUser> userManager,
@@ -94,7 +94,7 @@ app.MapPost("/registro", [AllowAnonymous] async (
     RegisterUser registerUser) =>
     {
         if (registerUser == null)
-            return Results.BadRequest("Usuário não informado");
+            return Results.BadRequest("Usuï¿½rio nï¿½o informado");
         if (!MiniValidator.TryValidate(registerUser, out var errors))
             return Results.ValidationProblem(errors);
 
@@ -127,7 +127,7 @@ app.MapPost("/registro", [AllowAnonymous] async (
      .WithName("RegistroUsuario")
      .WithTags("Usuario");
 
-// Login de Usuário
+// Login de UsuÃ¡rio
 app.MapPost("/login", [AllowAnonymous] async (
     SignInManager<IdentityUser> signInManager,
     UserManager<IdentityUser> userManager,
@@ -135,7 +135,7 @@ app.MapPost("/login", [AllowAnonymous] async (
     LoginUser loginUser) =>
 {
     if (loginUser == null)
-        return Results.BadRequest("Usuário não informado");
+        return Results.BadRequest("UsuÃ¡rio nÃ£o informado");
 
     if (!MiniValidator.TryValidate(loginUser, out var errors))
         return Results.ValidationProblem(errors);
@@ -143,10 +143,10 @@ app.MapPost("/login", [AllowAnonymous] async (
     var result = await signInManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
 
     if (result.IsLockedOut)
-        return Results.BadRequest("Usuário bloqueado");
+        return Results.BadRequest("UsuÃ¡rio bloqueado");
 
     if (!result.Succeeded)
-        return Results.BadRequest("Usuário ou senha inválidos");
+        return Results.BadRequest("UsuÃ¡rio ou senha invÃ¡lidos");
 
     var jwt = new JwtBuilder()
                 .WithUserManager(userManager)
@@ -168,14 +168,14 @@ app.MapPost("/login", [AllowAnonymous] async (
 
 // PLANTAS
 // Get de todas as plantas
-app.MapGet("/planta", async
+app.MapGet("/planta", [Authorize] async
     (MinimalContextDb context) => 
     await context.Plantas.ToListAsync())
     .WithName("GetPlanta")
     .WithTags("Planta");
 
 // Get de planta por ID
-app.MapGet("/plantaById/{id}", async
+app.MapGet("/plantaById/{id}", [Authorize] async
     (Guid id, MinimalContextDb context) =>
     await context.Plantas.FindAsync(id)
         is Planta planta ? Results.Ok(planta) : Results.NotFound())
@@ -185,7 +185,7 @@ app.MapGet("/plantaById/{id}", async
     .WithTags("Planta");
 
 // Get de planta por NAME
-app.MapGet("/plantaByName/{name}", async
+app.MapGet("/plantaByName/{name}", [Authorize] async
     (string name, MinimalContextDb context) =>
     await context.Plantas.Where(x => x.Name.Contains(name)).FirstOrDefaultAsync()
         is Planta planta ? Results.Ok(planta) : Results.NotFound())
@@ -195,6 +195,6 @@ app.MapGet("/plantaByName/{name}", async
     .WithTags("Planta");
 
 
-app.Run(); // Inicia a aplicação.
+app.Run(); // Inicia a aplicacaoo.
 
 #endregion
