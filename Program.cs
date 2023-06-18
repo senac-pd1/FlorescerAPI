@@ -195,6 +195,16 @@ app.MapGet("/plantaByName/{name}", [Authorize] async
     .WithTags("Planta");
 
 
+// Get de planta por Luminosity
+app.MapGet("/plantaByLuminosity/{luminosity}", [Authorize] async
+    (string luminosity, MinimalContextDb context) =>
+    await context.Plantas.Where(x => x.Luminosity.Contains(luminosity)).ToListAsync())
+        //is List(Planta planta) ? Results.Ok(planta) : Results.NotFound())
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithName("GetPlantaPorLuminosidade")
+    .WithTags("Planta");
+
 app.Run(); // Inicia a aplicacao.
 
 #endregion
