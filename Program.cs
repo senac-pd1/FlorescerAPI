@@ -19,7 +19,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Configure Services
 
-builder.Services.AddEndpointsApiExplorer(); //Gerador de metadados.
+// Gerador de metadados.
+builder.Services.AddEndpointsApiExplorer();
+
+// Add Cors
+builder.Services.AddCors();
+
 builder.Services.AddSwaggerGen( c=>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -70,7 +75,16 @@ builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
 builder.Services.AddIdentityConfiguration();
 builder.Services.AddJwtConfiguration(builder.Configuration, "AppSetting");
 
-var app = builder.Build(); 
+var app = builder.Build();
+
+// Habilita Cors
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+
 #endregion
 
 #region Configure pipeline
@@ -199,7 +213,6 @@ app.MapGet("/plantaByName/{name}", [Authorize] async
 app.MapGet("/plantaByLuminosity/{luminosity}", [Authorize] async
     (string luminosity, MinimalContextDb context) =>
     await context.Plantas.Where(x => x.Luminosity.Contains(luminosity)).ToListAsync())
-        //is List(Planta planta) ? Results.Ok(planta) : Results.NotFound())
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status404NotFound)
     .WithName("GetPlantaPorLuminosidade")
