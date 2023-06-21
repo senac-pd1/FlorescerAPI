@@ -218,8 +218,6 @@ app.MapGet("/plantaByLuminosity/{luminosity}", [Authorize] async
     .WithName("GetPlantaPorLuminosidade")
     .WithTags("Planta");
 
-
-
 app.Run(); // Inicia a aplicacao.
 
 #endregion
