@@ -14,6 +14,7 @@ using System.Reflection;
 using FlorescerAPI.Extensions;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using FlorescerAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,8 +70,6 @@ builder.Services.AddDbContext<MinimalContextDb>(options =>
 builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), 
     b => b.MigrationsAssembly("FlorescerAPI")));
-
-
 
 builder.Services.AddIdentityConfiguration();
 builder.Services.AddJwtConfiguration(builder.Configuration, "AppSetting");
@@ -211,11 +210,18 @@ app.MapGet("/plantaByName/{name}", [Authorize] async
 
 // Get de planta por Luminosity
 app.MapGet("/plantaByLuminosity/{luminosity}", [Authorize] async
-    (string luminosity, MinimalContextDb context) =>
-    await context.Plantas.Where(x => x.Luminosity.Contains(luminosity)).ToListAsync())
+    (string luminosity, MinimalContextDb context) => await context.Plantas.Where(x => x.Luminosity.Contains(luminosity)).ToListAsync())
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status404NotFound)
     .WithName("GetPlantaPorLuminosidade")
+    .WithTags("Planta");
+
+// Get de planta por luminosity (Alternativo)
+app.MapGet("/plantaByLuminosityAlt/{luminosity}", [Authorize] async
+    (string luminosity, MinimalContextDb context) => await FlcServices.GetPlantasByLuminosity(luminosity, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithName("GetPlantaPorLuminosidadeAlt")
     .WithTags("Planta");
 
 app.Run(); // Inicia a aplicacao.
