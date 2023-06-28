@@ -12,8 +12,11 @@ namespace FlorescerAPI.Data
 
         public DbSet<Planta> Plantas { get; set; }
 
+        public DbSet<Wishlist> Wishlists { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Planta Modeling
             modelBuilder.Entity<Planta>()
                 .HasKey(p => p.Id);
 
@@ -52,6 +55,20 @@ namespace FlorescerAPI.Data
             modelBuilder.Entity<Planta>()
                 .ToTable("Plantas");
 
+            //Wishlist Modeling
+            modelBuilder.Entity<Wishlist>()
+                .ToTable("Wishlist");
+
+            modelBuilder.Entity<Wishlist>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<Wishlist>()
+                .Property(p =>  p.UserId)
+                .HasColumnType("varchar");
+
+            modelBuilder.Entity<Wishlist>()
+                .Property(p => p.PlantaId)
+                .HasColumnType("varchar");
 
             base.OnModelCreating(modelBuilder);
         }

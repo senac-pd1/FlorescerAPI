@@ -15,6 +15,7 @@ using FlorescerAPI.Extensions;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using FlorescerAPI.Services;
+using FlorescerAPI.Models.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -223,6 +224,22 @@ app.MapGet("/plantaByLuminosityAlt/{luminosity}", [Authorize] async
     .Produces(StatusCodes.Status404NotFound)
     .WithName("GetPlantaPorLuminosidadeAlt")
     .WithTags("Planta");
+
+// Wishlist endpoints
+app.MapPost("/Add", [Authorize] async (WishlistPostRequest wishlist, MinimalContextDb context) => await FlcServices.PostWishlistAsync(wishlist, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status400BadRequest)
+    .WithTags("Wishlist");
+
+app.MapDelete("/Remove", [Authorize] async ([FromBody] WishlistPostRequest wishlist, MinimalContextDb context) => await FlcServices.PostWishlistAsync(wishlist, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status400BadRequest)
+    .WithTags("Wishlist");
+
+app.MapGet("/{userId}", [Authorize] async (Guid userId, MinimalContextDb context) => await FlcServices.GetWishlistByUserId(userId, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithTags("Wishlist");
 
 app.Run(); // Inicia a aplicacao.
 
