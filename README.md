@@ -49,7 +49,19 @@ git checkout -b nomeDaBranchDoJira
 
 4. A documentação de funcionamento da api está no swagger (ao executar a aplicação, o swagger abrirá automaticamente.)
 
-5. Ao testar os endpoints no swagger, enviar bearer {token} para receber autorização para 
+5. Ao testar os endpoints no swagger, enviar bearer {token} para receber autorização.
+
+
+## 🛠️ Alterando o banco de dados via entity:
+1. Rodar o comando CLI para criação da migration:
+```bash
+dotnet ef migrations add NomeDaMigration --context minimalcontextdb
+```
+
+2. Aplicar a migration no banco usando o comando CLI:
+```bash
+dotnet ef database update --context minimalcontextdb
+``
 
 ----------------------------------------------
 Qualquer dúvda, só me Chamar :-)
