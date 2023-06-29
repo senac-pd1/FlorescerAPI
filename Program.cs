@@ -226,17 +226,17 @@ app.MapGet("/plantaByLuminosityAlt/{luminosity}", [Authorize] async
     .WithTags("Planta");
 
 // Wishlist endpoints
-app.MapPost("/Add", [Authorize] async (WishlistPostRequest wishlist, MinimalContextDb context) => await FlcServices.PostWishlistAsync(wishlist, context))
+app.MapPost("/wishlist/Add", [Authorize] async (WishlistPostRequest wishlist, MinimalContextDb context) => await FlcServices.PostWishlistAsync(wishlist, context))
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status400BadRequest)
     .WithTags("Wishlist");
 
-app.MapDelete("/Remove", [Authorize] async ([FromBody] WishlistDeleteRequest wishlist, MinimalContextDb context) => await FlcServices.DeleteWishlistAsync(wishlist, context))
+app.MapDelete("/wishlist/Remove", [Authorize] async ([FromBody] WishlistDeleteRequest wishlist, MinimalContextDb context) => await FlcServices.DeleteWishlistAsync(wishlist, context))
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status400BadRequest)
     .WithTags("Wishlist");
 
-app.MapGet("/{userId}", [Authorize] async (Guid userId, MinimalContextDb context) => await FlcServices.GetWishlistByUserId(userId, context))
+app.MapGet("/wishlist/{userId}", [Authorize] async (Guid userId, MinimalContextDb context) => await FlcServices.GetWishlistByUserId(userId, context))
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status404NotFound)
     .WithTags("Wishlist");
