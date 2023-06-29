@@ -64,11 +64,11 @@ namespace FlorescerAPI.Data
 
             modelBuilder.Entity<Wishlist>()
                 .Property(p =>  p.UserId)
-                .HasColumnType("varchar");
+                .HasColumnType("uuid");
 
             modelBuilder.Entity<Wishlist>()
                 .Property(p => p.PlantaId)
-                .HasColumnType("varchar");
+                .HasColumnType("uuid");
 
             base.OnModelCreating(modelBuilder);
         }

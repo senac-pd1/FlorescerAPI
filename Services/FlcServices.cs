@@ -23,10 +23,11 @@ namespace FlorescerAPI.Services
 
             try
             {
-                var existsWishlist = await _context.Wishlists.Where(x => x.PlantaId == wishlist.PlantaId &&
-                                                                    x.UserId == wishlist.UserId).ToListAsync();
 
-                if (!existsWishlist.Any())
+                var existsWishlist = await _context.Wishlists.AnyAsync(x => x.PlantaId == wishlist.PlantaId &&
+                                                                    x.UserId == wishlist.UserId);
+
+                if (!existsWishlist)
                 {
                     var wishlistToPost = new Wishlist
                     {
