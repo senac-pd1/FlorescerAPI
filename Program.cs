@@ -231,7 +231,7 @@ app.MapPost("/Add", [Authorize] async (WishlistPostRequest wishlist, MinimalCont
     .Produces(StatusCodes.Status400BadRequest)
     .WithTags("Wishlist");
 
-app.MapDelete("/Remove", [Authorize] async ([FromBody] WishlistPostRequest wishlist, MinimalContextDb context) => await FlcServices.PostWishlistAsync(wishlist, context))
+app.MapDelete("/Remove", [Authorize] async ([FromBody] WishlistDeleteRequest wishlist, MinimalContextDb context) => await FlcServices.DeleteWishlistAsync(wishlist, context))
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status400BadRequest)
     .WithTags("Wishlist");
