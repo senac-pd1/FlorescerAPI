@@ -14,6 +14,8 @@ namespace FlorescerAPI.Data
 
         public DbSet<Wishlist> Wishlists { get; set; }
 
+        public DbSet<MeuJardim> MeusJardins { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Planta Modeling
@@ -29,7 +31,6 @@ namespace FlorescerAPI.Data
                 .Property(p => p.Img)
                 .HasColumnType("varchar");
 
-
             modelBuilder.Entity<Planta>()
                 .Property(p => p.Growth)
                 .HasColumnType("varchar");
@@ -38,11 +39,9 @@ namespace FlorescerAPI.Data
                 .Property(p => p.Family)
                 .HasColumnType("varchar");
 
-
             modelBuilder.Entity<Planta>()
                 .Property(p => p.Irrigation)
                 .HasColumnType("varchar");
-
 
             modelBuilder.Entity<Planta>()
                 .Property(p => p.Climate)
@@ -69,6 +68,26 @@ namespace FlorescerAPI.Data
             modelBuilder.Entity<Wishlist>()
                 .Property(p => p.PlantaId)
                 .HasColumnType("uuid");
+
+            //MeuJardim Modeling
+            modelBuilder.Entity<MeuJardim>()
+                .ToTable("MeuJardim");
+
+            modelBuilder.Entity<MeuJardim>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<MeuJardim>()
+                .Property(p => p.UserId)
+                .HasColumnType("uuid");
+
+            modelBuilder.Entity<MeuJardim>()
+                .Property(p => p.PlantaId)
+                .HasColumnType("uuid");
+
+            modelBuilder.Entity<MeuJardim>()
+                .Property(p => p.Notifica)
+                .HasColumnType("boolean");
+
 
             base.OnModelCreating(modelBuilder);
         }

@@ -241,6 +241,22 @@ app.MapGet("/wishlist/{userId}", [Authorize] async (Guid userId, MinimalContextD
     .Produces(StatusCodes.Status404NotFound)
     .WithTags("Wishlist");
 
+// MeuJardim endpoints
+app.MapPost("/meujardim/Add", [Authorize] async (MeuJardimPostRequest meuJardim, MinimalContextDb context) => await FlcServices.PostMeuJardimAsync(meuJardim, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status400BadRequest)
+    .WithTags("MeuJardim");
+
+app.MapDelete("/meujardim/Remove", [Authorize] async ([FromBody] MeuJardimDeleteRequest meuJardim, MinimalContextDb context) => await FlcServices.DeleteMeuJardimAsync(meuJardim, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status400BadRequest)
+    .WithTags("MeuJardim");
+
+app.MapGet("/meujardim/{userId}", [Authorize] async (Guid userId, MinimalContextDb context) => await FlcServices.GetMeuJardimByUserId(userId, context))
+    .Produces(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithTags("MeuJardim");
+
 app.Run(); // Inicia a aplicacao.
 
 #endregion
