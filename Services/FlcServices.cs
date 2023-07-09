@@ -140,6 +140,37 @@ namespace FlorescerAPI.Services
             }
         }
 
+
+        public static async Task<IResult> PutMeuJardimAsync(Guid id, MeuJardim meuJardim, MinimalContextDb _context)
+        {
+            if (id == null)
+            {
+                return Results.BadRequest("Requisição inválida");
+            }
+
+            try
+            {
+                var existsMeuJardim = await _context.MeusJardins.FindAsync(id);
+
+                if (existsMeuJardim != null)
+                {
+                    existsMeuJardim.Notifica = meuJardim.Notifica;
+                    _context.MeusJardins.Update(existsMeuJardim);
+                    var results = await _context.SaveChangesAsync();
+
+                    return Results.Ok(results);
+                }
+                else
+                {
+                    return Results.BadRequest($"Planta : {meuJardim.PlantaId} não consta no seu jardim.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Results.BadRequest($"Erro ao tentar atualizar a planta no seu jardim {ex.Message}");
+            }
+        }
+
         public static async Task<IResult> DeleteMeuJardimAsync(MeuJardimDeleteRequest meuJardim, MinimalContextDb _context)
         {
             if (meuJardim == null)
