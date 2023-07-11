@@ -257,7 +257,7 @@ app.MapGet("/meujardim/{userId}", [Authorize] async (Guid userId, MinimalContext
     .Produces(StatusCodes.Status404NotFound)
     .WithTags("MeuJardim");
 
-app.MapPut("/meujardim/{meuJardimId}/", [Authorize] async (Guid id, MeuJardim meuJardim, MinimalContextDb context) => await FlcServices.PutMeuJardimAsync(id, meuJardim, context))
+app.MapPut("/meujardim/Update/",  [Authorize] async (MeuJardim meuJardim, MinimalContextDb context) => await FlcServices.PutMeuJardimAsync(meuJardim, context))
     .Produces(StatusCodes.Status200OK)
     .Produces(StatusCodes.Status404NotFound)
     .WithTags("MeuJardim");
