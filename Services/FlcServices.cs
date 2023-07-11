@@ -140,7 +140,6 @@ namespace FlorescerAPI.Services
             }
         }
 
-
         public static async Task<IResult> PutMeuJardimAsync(MeuJardim meuJardim, MinimalContextDb _context)
         {
             if (meuJardim == null)
@@ -150,13 +149,13 @@ namespace FlorescerAPI.Services
 
             try
             {
+
                 var existsMeuJardim = await _context.MeusJardins.FirstAsync(x => x.PlantaId == meuJardim.PlantaId &&
                                                                     x.UserId == meuJardim.UserId);
 
                 if (existsMeuJardim != null)
                 {
                     existsMeuJardim.Notifica = meuJardim.Notifica;
-                        
                     _context.MeusJardins.Update(existsMeuJardim);
                     var results = await _context.SaveChangesAsync();
 
