@@ -140,17 +140,18 @@ namespace FlorescerAPI.Services
             }
         }
 
-
-        public static async Task<IResult> PutMeuJardimAsync(Guid id, MeuJardim meuJardim, MinimalContextDb _context)
+        public static async Task<IResult> PutMeuJardimAsync(MeuJardim meuJardim, MinimalContextDb _context)
         {
-            if (id == null)
+            if (meuJardim == null)
             {
                 return Results.BadRequest("Requisição inválida");
             }
 
             try
             {
-                var existsMeuJardim = await _context.MeusJardins.FindAsync(id);
+
+                var existsMeuJardim = await _context.MeusJardins.FirstAsync(x => x.PlantaId == meuJardim.PlantaId &&
+                                                                    x.UserId == meuJardim.UserId);
 
                 if (existsMeuJardim != null)
                 {
